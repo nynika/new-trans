@@ -1,0 +1,891 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'home/css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-dTpk+2oP2H4QCb1L2+Rk4Xk3QpXs54J0T+XqKONdbduR6vu/B/Mz1VHz6x+jzLqUj5bkht4qsOlHZsDfe9cXrTQ==" crossorigin="anonymous" />
+  </head>
+
+
+<body>
+<div class="container">
+      <h1>Test</h1>
+
+      <div class="contact-wrap">
+        <div class="contact-in">
+          <h2>
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <a target="_blank" href="#" id="locationLink">Location (Click to Get GPS)</a>
+          </h2>
+        </div>
+      </div>
+
+
+      <button id="startRecordingButton"><i class="fas fa-microphone"></i> </button>
+      <p id="output"></p>
+
+      <div class="container">
+      <div class="row selects">
+        <div class="select">
+          <select style="background-color: rgb(43, 226, 195);" id="from-language">
+            <option value="en" selected>English</option>
+          </select>
+        </div>
+        
+        <div class="select">
+          <select style="background-color: rgb(43, 226, 195);"  id="to-language">
+            <option value="af">Afrikaans</option>
+            <option value="am">Amharic</option>
+            <option value="ar">Arabic</option>
+            <option value="as">Assamese</option>
+            <option value="az">Azerbaijani</option>
+            <option value="ba">Bashkir</option>
+            <option value="bg">Bulgarian</option>
+            <option value="bho">Bhojpuri</option>
+            <option value="bn">Bengali</option>
+            <option value="bo">Tibetan</option>
+            <option value="brx">Bodo</option>
+            <option value="bs">Bosnian</option>
+            <option value="ca">Catalan</option>
+            <option value="cs">Czech</option>
+            <option value="cy">Welsh</option>
+            <option value="da">Danish</option>
+            <option value="de">German</option>
+            <option value="doi">Dogri</option>
+            <option value="dsb">Lower Sorbian</option>
+            <option value="dv">Divehi</option>
+            <option value="el">Greek</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="et">Estonian</option>
+            <option value="eu">Basque</option>
+            <option value="fa">Persian</option>
+            <option value="fi">Finnish</option>
+            <option value="fil">Filipino</option>
+            <option value="fj">Fijian</option>
+            <option value="fo">Faroese</option>
+            <option value="fr">French</option>
+            <option value="fr-CA">Canadian French</option>
+            <option value="ga">Irish</option>
+            <option value="gl">Galician</option>
+            <option value="gom">Goan Konkani</option>
+            <option value="gu">Gujarati</option>
+            <option value="ha">Hausa</option>
+            <option value="he">Hebrew</option>
+            <option value="hi">Hindi</option>
+            <option value="hr">Croatian</option>
+            <option value="hsb">Upper Sorbian</option>
+            <option value="ht">Haitian Creole</option>
+            <option value="hu">Hungarian</option>
+            <option value="hy">Armenian</option>
+            <option value="id">Indonesian</option>
+            <option value="ig">Igbo</option>
+            <option value="ikt">Inuinnaqtun</option>
+            <option value="is">Icelandic</option>
+            <option value="it">Italian</option>
+            <option value="iu">Inuktitut</option>
+            <option value="iu-Latn">Inuktitut (Latin)</option>
+            <option value="ja">Japanese</option>
+            <option value="ka">Georgian</option>
+            <option value="kk">Kazakh</option>
+            <option value="km">Khmer</option>
+            <option value="kmr">Kurmanji</option>
+            <option value="kn">Kannada</option>
+            <option value="ko">Korean</option>
+            <option value="ks">Kashmiri</option>
+            <option value="ku">Kurdish</option>
+            <option value="ky">Kyrgyz</option>
+            <option value="ln">Lingala</option>
+            <option value="lo">Lao</option>
+            <option value="lt">Lithuanian</option>
+            <option value="lug">Ganda</option>
+            <option value="lv">Latvian</option>
+            <option value="lzh">Literary Chinese</option>
+            <option value="mai">Maithili</option>
+            <option value="mg">Malagasy</option>
+            <option value="mi">Maori</option>
+            <option value="mk">Macedonian</option>
+            <option value="ml">Malayalam</option>
+            <option value="mn-Cyrl">Mongolian (Cyrillic)</option>
+            <option value="mn-Mong">Mongolian (Mongolian)</option>
+            <option value="mr">Marathi</option>
+            <option value="ms">Malay</option>
+            <option value="mt">Maltese</option>
+            <option value="mww">Hmong Daw</option>
+            <option value="my">Burmese</option>
+            <option value="nb">Norwegian Bokmål</option>
+            <option value="ne">Nepali</option>
+            <option value="nl">Dutch</option>
+            <option value="nso">Northern Sotho</option>
+            <option value="nya">Chichewa</option>
+            <option value="or">Oriya</option>
+            <option value="otq">Querétaro Otomi</option>
+            <option value="ta"selected>Tamil</option>
+          </select>
+        </div>
+      </div>
+ 
+      <div class="form-control">
+        
+        <div class="card">
+          <div id="textbox">
+          <textarea class="input" placeholder="Enter Text..."></textarea>
+        </div>
+     </div>
+      
+
+        <div class="card">
+          <div id="textbox">
+          <textarea class="output" placeholder="Text Result..." readonly></textarea>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <button style="background-color: rgb(43, 226, 195);" class="submit wk-rp" id="startRecordingButton">
+       <!--  <button style="background-color: rgb(43, 226, 195);"  class="submit wk-rp"> -->
+          <p>Post</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="margin: auto; shape-rendering: auto"
+            width="40px"
+            height="40px"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="xMidYMid"
+          >
+            <path
+              fill="none"
+              stroke="#FFFFFF"
+              stroke-width="8"
+              stroke-dasharray="42.76482137044271 42.76482137044271"
+              d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+              stroke-linecap="round"
+              style="transform: scale(0.8); transform-origin: 50px 50px"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                repeatCount="indefinite"
+                dur="1s"
+                keyTimes="0;1"
+                values="0;256.58892822265625"
+              ></animate>
+            </path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+
+<!-- ------------------ -->
+
+    <script>
+      const startRecordingButton = document.getElementById('startRecordingButton');
+      const output = document.getElementById('output');
+    
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'en-US';
+    
+      recognition.onstart = () => {
+        startRecordingButton.textContent = 'Recording...';
+      };
+    
+      recognition.onresult = async (event) => {
+        const transcript = event.results[0][0].transcript;
+    
+        // Replace 'YOUR_GOOGLE_TRANSLATE_API_KEY' with your actual API key
+        const apiKey = 'YOUR_GOOGLE_TRANSLATE_API_KEY';
+        const apiUrl = 'https://translation.googleapis.com/language/translate/v2';
+    
+        // Replace 'to-language' with the actual ID of your language selector
+        const selectedLanguage = document.getElementById('to-language').value;
+    
+        // Translate the transcript to the selected language
+        const translatedText = await translateText(transcript, selectedLanguage, apiKey, apiUrl);
+    
+        output.textContent = Original: ${transcript}\nTranslated (${selectedLanguage}): ${translatedText};
+    
+        // Show the submit button after recording is complete
+        startRecordingButton.textContent = 'Post';
+      };
+    
+      recognition.onerror = (event) => {
+        output.textContent = 'Error: ' + event.error;
+      };
+    
+      recognition.onend = () => {
+        startRecordingButton.textContent = 'Post';
+      };
+    
+      startRecordingButton.addEventListener('click', () => {
+        recognition.start();
+      });
+    
+      // Google Translate API
+      async function translateText(text, targetLanguage, apiKey, apiUrl) {
+        const response = await fetch(${apiUrl}?key=${apiKey}, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            q: text,
+            target: targetLanguage,
+          }),
+        });
+    
+        const data = await response.json();
+        return data.data.translations[0].translatedText;
+      }
+    </script>
+
+<!--------------------------------------------------------------------------- -->
+
+
+<div class="card3">
+  <button class="heart-animation" id="likeBtn" onclick="likeAction()">
+    <i class="fas fa-heart"></i>
+  </button>
+  <span id="overallLikeCount">0</span>
+</div>
+
+<div class="card2">
+  <form id="commentForm">
+    <label for="commentInput">Comment:</label>
+    <input type="text" id="commentInput" placeholder="Enter your comment..." required />
+    <button type="submit">Post Comment</button>
+  </form>
+  <div id="commentList"></div>
+</div>
+
+<!-- ------------------------->
+
+
+<script>
+  let overallLikeCount = 0;
+  let comments = [];
+
+  // Function to update overall like count
+  function updateOverallLikeCount() {
+    document.getElementById("overallLikeCount").innerText = overallLikeCount + " ";
+  }
+
+  // Function to reply to a comment
+  function replyComment(commentIndex) {
+    const replyInput = prompt("Enter your reply:");
+    if (replyInput !== null && replyInput.trim() !== "") {
+      // Check if the comment exists and has a 'text' property
+      if (comments[commentIndex] && comments[commentIndex].text) {
+        comments[commentIndex].text += ` (Reply: ${replyInput})`;
+      }
+      updateComments();
+      saveDataToLocalStorage(); // Save comments to local storage
+    }
+  }
+
+  // Function to update comments list
+  function updateComments() {
+    const commentList = document.getElementById("commentList");
+    commentList.innerHTML = "";
+    comments.forEach((comment, index) => {
+      const commentItem = document.createElement("div");
+      commentItem.innerHTML = `<div>${comment.text}</div>
+    <button onclick="likeComment(${index})">Like</button>
+    <button onclick="replyComment(${index})">Reply</button>
+    <span class="commentLikeCount" id="commentLikeCount${index}">${comment.likeCount}</span>`;
+      commentList.appendChild(commentItem);
+    });
+  }
+
+  // Function to save data to local storage
+  function saveDataToLocalStorage() {
+    localStorage.setItem("overallLikeCount", overallLikeCount);
+    localStorage.setItem("comments", JSON.stringify(comments));
+  }
+
+  // Load data from local storage
+  function loadDataFromLocalStorage() {
+    const storedOverallLikeCount = localStorage.getItem("overallLikeCount") || 0;
+    overallLikeCount = parseInt(storedOverallLikeCount);
+
+    const storedComments = localStorage.getItem("comments");
+    comments = storedComments ? JSON.parse(storedComments) : [];
+    updateOverallLikeCount();
+    updateComments();
+  }
+
+  // Handle overall like action
+  function likeAction() {
+    overallLikeCount++;
+    updateOverallLikeCount();
+    saveDataToLocalStorage();
+  }
+
+  // Handle comment like action
+  function likeComment(commentIndex) {
+    comments[commentIndex].likeCount++;
+    updateComments();
+    saveDataToLocalStorage();
+  }
+
+  // Handle comment submission
+  document.getElementById("commentForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const commentInput = document.getElementById("commentInput");
+    const newComment = {
+      text: commentInput.value.trim(),
+      likeCount: 0,
+    };
+
+    if (newComment.text !== "") {
+      comments.push(newComment);
+      updateComments();
+      saveDataToLocalStorage();
+      commentInput.value = "";
+    }
+  });
+
+  // Load local storage data on page load
+  document.addEventListener("DOMContentLoaded", loadDataFromLocalStorage);
+</script>
+
+<script src="https://kit.fontawesome.com/704ff50790.js" crossorigin="anonymous"></script>
+
+    <div data-a2a-title="social_share" data-a2a-url="http://127.0.0.1:8000/"> </div>
+
+    <div class="main_box">
+      <input type="checkbox" id="share_button">
+      <label for="share_button">
+        <span class="sharebtn">
+          <i class="far fa-share-square"></i>
+        </span>
+      </label>
+
+
+      <span id="shareCount">0 Shares </span>
+
+      <div class="sm_list">
+        <a href="https://www.facebook.com/" class="facebook" target="_blank" onclick="shareLink('Facebook')">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/" class="instagram" target="_blank" onclick="shareLink('instagram')">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/" class="linkedin" target="_blank" onclick="shareLink('LinkedIn')">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://discord.com/" class="discord" target="_blank" onclick="shareLink('Discord')">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://api.whatsapp.com/" class="whatsapp" target="_blank" onclick="shareLink('WhatsApp')">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://slack.com/" class="slack" target="_blank" onclick="shareLink('Slack')">
+          <i class="fab fa-slack"></i>
+        </a>
+      </div>
+    </div>
+
+
+    <script>
+      const sharebtn =
+        document.querySelector('.sharebtn')
+
+      // Creating a bool variable for changing the image of share button 
+      let bool = 0
+
+      // Adding an event listener
+      sharebtn.addEventListener('click', () => {
+
+        // As we clicked the mouse over the share button the bool value. get flipped and then working of if-else loop get starts bool = !bool
+
+        if (bool == 0) {
+          sharebtn.innerHTML =
+            '<i class="far fa-share-square"></i>'
+        } else {
+          sharebtn.innerHTML =
+            '<i class="fas fa-times"></i>'
+        }
+      })
+    </script>
+
+
+    <script>
+      let shareCount = 0;
+
+      function updateShareCount() {
+        document.getElementById("shareCount").innerText = shareCount + " ";
+        localStorage.setItem("shareCount", shareCount);
+      }
+
+      document.getElementById("share_button").addEventListener("change", function () {
+        const smList = document.querySelector(".sm_list");
+
+        if (this.checked) {
+          // Show sm_list when the share button is checked
+          smList.style.display = "flex";
+          shareCount++;
+          updateShareCount();
+        } else {
+          // Hide sm_list when the share button is unchecked
+          smList.style.display = "none";
+        }
+      });
+
+      function loadLocalStorageData() {
+        const storedShareCount = localStorage.getItem("shareCount") || 0;
+        shareCount = parseInt(storedShareCount);
+        updateShareCount();
+      }
+
+      document.addEventListener("DOMContentLoaded", loadLocalStorageData);
+
+      function shareLink(platform) {
+        // You can add platform-specific sharing logic here
+        alert("Sharing link on " + platform);
+      }
+    </script>
+
+    
+
+<!---------------------------------- upload image ------------------------------>
+ 
+<div class="user-image">
+  <img id="userImagePreview" src="{% static 'path/to/default/user/image.jpg' %}" alt="User Image">
+  <input type="file" accept="image/*" id="userImageInput" style="display: none;">
+</div> 
+
+<script>
+  // JavaScript code to handle user image upload and preview
+  const userImagePreview = document.getElementById('userImagePreview');
+  const userImageInput = document.getElementById('userImageInput');
+
+  // Load user image from local storage on page load
+  const storedUserImage = localStorage.getItem('userImage');
+  if (storedUserImage) {
+    userImagePreview.src = storedUserImage;
+  }
+
+  // Add event listener to userImagePreview to change the image
+  userImagePreview.addEventListener('click', function () {
+    // Trigger userImageInput click
+    userImageInput.click();
+  });
+
+  // Add event listener to handle file input change
+  userImageInput.addEventListener('change', function (event) {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        userImagePreview.src = e.target.result;
+
+        // Save user image to local storage
+        localStorage.setItem('userImage', e.target.result);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+
+
+
+<!-- gps location -->
+
+<script>
+  document.getElementById("locationLink").addEventListener("click", getLocation);
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    // Use the latitude and longitude to open a map link
+    const mapLink = https://maps.google.com/?q=${latitude},${longitude};
+    window.open(mapLink, "_blank");
+  }
+</script>
+
+<style>
+
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0; 
+
+}
+
+
+.submit {
+  max-width: 100px;
+  margin-left: 50px;
+}
+
+  .form-control{
+    position: absolute;
+    top: 10%;
+  }
+  
+   textarea{
+    position: relative;
+    margin-left: 9%;
+    max-width: 90%;
+   }
+  
+    #startRecordingButton{
+      position: absolute;
+      top: 11.5%;
+      left: 44.5%;
+      z-index: 999;
+      font-size: 20px;
+    }
+  
+    h1{
+        position: absolute;
+        top: 0%;
+        color:   black;
+        right: 50%;
+    }
+  
+    h2 {
+      margin-top: 55%;
+    }
+  
+    h2 i {
+      position: absolute;
+      top: 4%;
+      color: red;
+      left: 79.5%;
+    }
+  
+    a {
+      color: blue;
+      position: absolute;
+      font-size: 20px;
+      top: 4%;
+      right: 3%;
+    }
+  </style> 
+  
+     
+  
+      <!---------------- Like button style ---------------------->
+  
+      <style>
+        .heart-animation {
+          animation: pulse 1s infinite;
+        }
+  
+        #likeBtn {
+          position: absolute;
+          font-size: 15px;
+          top: 45%;
+          left: 33%;
+        
+        }
+  
+        #overallLikeCount {
+          position: absolute;
+          left: 35.5%;
+          top: 45.5%;
+          font-size: 20px;
+  
+        }
+      </style>
+  
+  
+      <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #f4f4f4;
+        }
+    
+        .card2 {
+   
+          background-color: #fff;
+          padding: 28px;
+          border-radius: 8px;
+          width: 500px;
+          margin-left: 300px;
+  
+  }
+  
+    
+        button {
+          background-color: #3498db;
+          color: #fff;
+          padding: 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-right: 10px;
+        }
+    
+        button:hover {
+          background-color: #2980b9;
+        }
+    
+        form {
+          margin-bottom: 40px;
+        }
+    
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+    
+        input {
+          width: 100%;
+          padding: 8px;
+          box-sizing: border-box;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+    
+        #commentList {
+          margin-top: 10px;
+        }
+    
+        .commentItem {
+          margin-bottom: 10px;
+        }
+    
+        .commentLikeCount {
+          margin-left: 10px;
+          color: #3498db;
+          position: absolute;
+        }
+      </style>
+  
+  
+  <style>
+  
+    .user-image {
+      text-align: center;
+      position: absolute;
+      left: 8%;
+      top: 8%;
+    }
+  
+    #userImageInput {
+      display: none;
+    }
+  
+    label {
+      cursor: pointer;
+    }
+  
+    #userImagePreview {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #3498db; /* Change color as needed */
+    }
+  
+    #changeImageButton {
+      margin-top: 10px;
+      background-color: #3498db; /* Change color as needed */
+      color: #fff;
+      padding: 3px 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    #changeImageButton:hover {
+      background-color: #2980b9; /* Change color as needed */
+    }
+  
+  
+    .select {
+      position: absolute;
+      display: inline-block;
+      top: 22%;
+      left: 73%;
+      z-index: 999;
+    }
+  
+  </style>
+  
+  
+   <!----------------------------------------------------------SHARE BUTTON style---------------------------------------------------------------- -->
+  
+   <style>
+     
+    .main_box {
+      position: absolute;
+      width: 4em;
+      height: 4em;
+      bottom: 44.5%;
+      left: 38%;
+      transform: translateY(-50%);
+    }
+  
+  
+    #share_button {
+      display: none;
+    }
+  
+    .sharebtn,
+    a {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+    }
+  
+    .sharebtn {
+      width: 1.1em;
+      height: 1.1em;
+      top: 51%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      background-color: #eee;
+      color: #333;
+      font-size: 2em;
+      z-index: 1;
+      cursor: pointer;
+  
+    }
+  
+  
+    #shareCount {
+      position: absolute;
+      margin-left: 85%;
+      top: 35%;
+      font-size: 20px;
+    }
+  
+    .sm_list {
+      width: 2em;
+      height: 2em;
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      gap: 1.5em;
+      /* Adjust this value to set the desired gap between items */
+    }
+  
+    .sm_list a {
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      text-decoration: none;
+      color: #fff;
+      transition: all .3s;
+      font-size: 1.5em;
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(1) {
+      background-color: #3B5998;
+      transition-delay: 0.2s;
+      transform: translateX(-6em);
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(2) {
+      background-color: #dd2553;
+      transition-delay: 0.2s;
+      transform: translateX(6em);
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(3) {
+      background-color: #000f94;
+      transition-delay: 0.3s;
+      transform: translateX(12em);
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(4) {
+      background-color: #1077ec;
+      transition-delay: 0.3s;
+      transform: translateX(-12em);
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(5) {
+      background-color: rgb(10, 63, 0);
+      transition-delay: 0.4s;
+      transform: translateX(18em);
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(6) {
+      background: linear-gradient(70deg, blue, green, red, yellow);
+      transition-delay: 0.4s;
+      transform: translateX(-18em);
+    }
+  
+    /* Hovering Effects */
+    #share_button:checked~.sm_list a:nth-child(1):hover {
+      background-color: #ffffff;
+      color: #3B5998;
+       transition-delay: 0.2s;
+       transform: translateX(-6em); 
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(2):hover {
+      color: #dd2553;
+      background-color: #fff;
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(3):hover {
+      color: #000f94;
+      background-color: #fff;
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(4):hover {
+      color: #1077ec;
+      background-color: #fff;
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(5):hover {
+      color: rgb(10, 63, 0);
+      background-color: #fff;
+    }
+  
+    #share_button:checked~.sm_list a:nth-child(6):hover {
+      color: black;
+      background-image: linear-gradient(90deg, white, grey);
+    }
+  
+    span:visited {
+      background-color: #000f94;
+    }
+  </style>
+  
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="{% static 'home/js/ripples.js'%}"></script>
+      <script src="{% static 'home/js/main.js'%}"></script>
+  
+  </body>
+  
+  </html>
